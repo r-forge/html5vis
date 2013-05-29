@@ -1,0 +1,16 @@
+Package: html5Vis
+Type: Package
+Title: User-interactive plots display package
+Version: 0.0-1
+Author: Yang Zhou <zhouyanga9@gmail.com> & Li Jian <jian.li@188.com>
+Maintainer: Yang Zhou <zhouyanga9@gmail.com> & Li Jian <jian.li@188.com>
+Depends: R (>= 2.13.1),  RJSONIO, tools
+Description: The html5Vis package provides some user-interactive plots for R user.
+		The user-interactive plots are displayed on web-browser and requires user
+		to use HTML5-supported browsers(Chrome, FireFox, Safari, Opera and IE(>=10.0)).
+		Up to now, html5Vis provide corrplot(which created by Taiyun Wei), MotionChart 
+		and ggplot2-styled cluster plot.
+License: GPL
+LazyLoad: yes
+LazyData: yes
+
