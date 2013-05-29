@@ -56,8 +56,8 @@ M7 <- mvisMotionChart(Fruits, idvar="Fruit", timevar="Year",
 plot(M7)
 }
 \author{
-  Zhou Yang \email{zhouyanga9@gmail.com}
+  Zhou Yang \email{zhouyanga9 AT gmail.com}
 
-  Jian Li \email{jian.li@188.com}
+  Jian Li \email{rweibo AT sina.com}
 }
 

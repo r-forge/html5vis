@@ -12,8 +12,8 @@
 #' Use the same value to identify all bubbles that belong to the same series; 
 #' bubbles in the same series will be assigned the same color. Series can be configured using the series option.
 #' @param sizevar: values in this column are mapped to actual pixel values using the sizeAxis option.
-#' @author Zhou Yang \email{zhouyanga9@@gmail.com}
-#' @author Jian Li \email{jian.li@@188.com}
+#' @author Zhou Yang \email{zhouyanga9 AT gmail.com}
+#' @author Jian Li \email{rweibo AT sina.com}
 #' @return the function will generate an html object, which could display by plot function.
 #' 
 #' @examples #'demo plots for mvisMotionChart
