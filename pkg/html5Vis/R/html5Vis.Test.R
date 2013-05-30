@@ -6,10 +6,10 @@
 ##' @param unitTestPath Path where the scripts are located.  By default, will use the package installation directory.
 ##' @param printTestProtocol Logical flag.  Should HTML reports be produced?
 ##' @return The results of executing the test suites via the function \code{runTestSuite}. 
-##' @author Mango Solutions
+##' @author Yang Zhou
 ##' @keywords debugging
 ##' @examples
-##' x <- googleVis.Mango.Test(printTestProtocol = FALSE)
+##' x <- html5Vis.Test(printTestProtocol = FALSE)
 ##' summary(x)
 ##' 
 
