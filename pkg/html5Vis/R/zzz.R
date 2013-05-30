@@ -9,12 +9,13 @@
   ## e.g. to set startZoom and stopZoom windows in gvisAnnotatedTimeLine
 
   
-	if (interactive()) {
-		#options(mvis.html5.dir = chartr("\\", "/", system.file("html5", package = "html5Vis")))
-		options(mvis.template.dir = chartr("\\", "/", system.file("template", package = "html5Vis")))
-		options(mvis.images.dir = chartr("\\", "/", system.file("images", package = "html5Vis")))
+	
+	#options(mvis.html5.dir = chartr("\\", "/", system.file("html5", package = "html5Vis")))
+	options(mvis.geoData.dir = chartr("\\", "/", system.file("data", package = "html5Vis")))
+	options(mvis.template.dir = chartr("\\", "/", system.file("template", package = "html5Vis")))
+	options(mvis.images.dir = chartr("\\", "/", system.file("images", package = "html5Vis")))
 
-	}
+
 	
 	options(mvis.plot.tag=NULL)
 	options(mvis.print.tag="html")

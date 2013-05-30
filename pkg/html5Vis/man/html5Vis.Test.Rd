@@ -1,8 +1,8 @@
-\name{googleVis.Mango.Test}
-\alias{googleVis.Mango.Test}
+\name{html5Vis.Test}
+\alias{html5Vis.Test}
 \title{Run package regression tests}
 \usage{
-  googleVis.Mango.Test(unitTestPath = system.file(package = "googleVis.Mango", "unittests"),
+  html5Vis.Test(unitTestPath = system.file(package = "html5Vis", "unittests"),
     printTestProtocol = FALSE)
 }
 \arguments{

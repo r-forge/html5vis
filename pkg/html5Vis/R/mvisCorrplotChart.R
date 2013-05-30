@@ -43,7 +43,7 @@ mvisCorrplotChart <- function(corrmatrix, color = NULL,
 	footerStr <- footerHtml
 	captionStr <- gsub("CHARTID", chartid, captionHtml)
 	chartStr <- gsub("HTML5FOLDERHERE", "html5", chartHtml)
-	chartStr <- gsub("<!--JSONHERE-->", paste("var outJSON =", jsonStr), chartStr)
+	chartStr <- gsub("<!--JSONHERE-->", paste("var mvisCorrplotData =", jsonStr), chartStr)
 	
 	headerStr <- paste(headerStr, collapse = "\n")
 	footerStr <- paste(footerStr, collapse = "\n")

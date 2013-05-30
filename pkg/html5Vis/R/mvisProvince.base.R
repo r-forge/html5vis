@@ -26,29 +26,28 @@
 #' plot(M7)
 
 
-mvisMotionChart <- function(data, idvar = "Shop", timevar = "Date",
-		xvar = "Revenue", yvar = "GrossProfit", colorvar = "Shop", sizevar = "Count",
+mvisProvince.base <- function(data, provincevar = "province", datavar = "value",
 		srcdir = getOption("mvis.html5.dir")
 ) {
 
 	templatedir = getOption("mvis.template.dir")
-	charttype <- "html5Vis.MotionChart"
+	charttype <- "geoVis"
 	chartid <- paste(charttype, basename(tempfile(pattern = "")), sep = "ID")
 	
-	jsonList <- .convertJsonList.Motion(data, idvar, timevar, xvar, yvar, colorvar, sizevar)
+	jsonList <- .convertJsonList.ProvinceDis.base(data, provincevar, datavar)
 	jsonStr <- toJSON(jsonList)
 	
 	headerHtml <- readLines(file.path(templatedir, "header.html"))
 	footerHtml <- readLines(file.path(templatedir, "footer.html"))
 	captionHtml <- readLines(file.path(templatedir, "caption.html"))
-	chartHtml <- readLines(file.path(templatedir, "chart.motion.html"))
+	chartHtml <- readLines(file.path(templatedir, "chart.geoDisp.html"))
 
 	headerStr <- gsub("HEADER", chartid, headerHtml)
 	headerStr <- gsub("HTML5FOLDERHERE", "html5", headerStr)
 	footerStr <- footerHtml
 	captionStr <- gsub("CHARTID", chartid, captionHtml)
 	chartStr <- gsub("HTML5FOLDERHERE", "html5", chartHtml)
-	chartStr <- gsub("<!--JSONHERE-->", paste("var mvisMotionChartData =", jsonStr), chartStr)
+	chartStr <- gsub("<!--JSONHERE-->", paste("var outputData =", jsonStr), chartStr)
 	
 	headerStr <- paste(headerStr, collapse = "\n")
 	footerStr <- paste(footerStr, collapse = "\n")

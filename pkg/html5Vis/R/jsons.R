@@ -139,4 +139,14 @@
 }
 
 
+.convertJsonList.ProvinceDis.base <- function(coreDf, provincevar, datavar ){
+	coreDf <- data.frame(coreDf[, c(provincevar, datavar)])
+	names(coreDf) <- c("province", "value")
+	outList = list()
+	outList[["data"]] <- lapply(1:nrow(coreDf), FUN = function(X) coreDf[X, , drop = TRUE])
+	return(outList)
+
+}
+
+
 

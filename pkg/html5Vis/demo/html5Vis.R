@@ -1,4 +1,4 @@
-## googleVis demo
+## html5Vis demo
 pause <- function(){  
   invisible(readline("\nPress <return> to continue: ")) 
 }

@@ -13,14 +13,13 @@
 ##' summary(x)
 ##' 
 
-
-googleVis.Mango.Test <- function(unitTestPath = system.file(package="googleVis.Mango", "unittests"), printTestProtocol = FALSE)
+html5Vis.Test <- function(unitTestPath = system.file(package="html5Vis", "unittests"), printTestProtocol = FALSE)
 {
 	stopifnot(require("RUnit", quietly = TRUE))
 	print (unitTestPath)
-	testSuite <- defineTestSuite("googleVis.Mango unit test suite", dirs = unitTestPath, testFileRegexp = "^runit\\..+\\.[rR]$")
+	testSuite <- defineTestSuite("html5Vis unit test suite", dirs = unitTestPath, testFileRegexp = "^runit\\..+\\.[rR]$")
 	res <- runTestSuite(testSuite)
-	if(printTestProtocol) printHTMLProtocol(res, fileName = "googleVis.Mango.html" )
+	if(printTestProtocol) printHTMLProtocol(res, fileName = "html5Vis.html" )
 	
 	res
 }

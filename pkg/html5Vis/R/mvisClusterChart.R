@@ -62,7 +62,7 @@ mvisClusterChart <- function(data,  xvar = "x", yvar = "y", clustervar = "cluste
 	footerStr <- footerHtml
 	captionStr <- gsub("CHARTID", chartid, captionHtml)
 	chartStr <- gsub("HTML5FOLDERHERE", "html5", chartHtml)
-	chartStr <- gsub("<!--JSONHERE-->", paste("var outputData =", jsonStr), chartStr)
+	chartStr <- gsub("<!--JSONHERE-->", paste("var mvisClusterData =", jsonStr), chartStr)
 	
 	headerStr <- paste(headerStr, collapse = "\n")
 	footerStr <- paste(footerStr, collapse = "\n")

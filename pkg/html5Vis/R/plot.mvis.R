@@ -12,10 +12,11 @@ plot.mvis <- function (x, tag = NULL, ...)
 		env <- get(".httpd.handlers.env", asNamespace("tools"))
 		env[["googleVis"]] <- .mvis.httpd.handler
 		root.dir <- tempdir()
+		print(paste("chart path", root.dir))
 		if (!file.exists(root.dir)) dir.create(root.dir, recursive = TRUE)
-		#if (!file.exists(file.path(root.dir, basename(getOption("mvis.html5.dir"))))) {
-		#	file.copy(getOption("mvis.html5.dir"), root.dir, recursive = TRUE)
-		#}
+		if (x$type == "geoVis") {
+			file.copy(getOption("mvis.geoData.dir"), root.dir, recursive = TRUE)
+		}
 		if ("mvis" %in% class(x)) {
 			chart.txt <- "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n        \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\n<head>\n  <title>%s</title>\n  <meta http-equiv=\"content-type\" content=\"text/html;charset=utf-8\" />\n  <style type=\"text/css\">\n    body {\n          color: #444444;\n          font-family: Arial,Helvetica,sans-serif;\n          font-size: 75%%;\n    }\n    a {\n          color: #4D87C7;\n          text-decoration: none;\n    }\n  </style>\n</head>\n<body>\n<p>\n  You find below the HTML code of the visualisation.<br />\n  You can copy and paste the code into an existing HTML page.<br />\n  For more information see also <a href=\"/library/googleVis/html/gvisMethods.html\">?print.mvis</a></p>\n<p><textarea rows=\"50\" name=\"html\" cols=\"80\">\n%s\n</textarea>\n</p>\n</body>\n</html>\n"
 			chart.txt <- sprintf(chart.txt, x$chartid, gsub(">", 
