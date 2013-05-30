@@ -1,79 +1,66 @@
 
 <!-- jsHeader -->
-	<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-	<script type="text/javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
-	<link href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" rel="stylesheet">
-	<link href="http://yzhou.org/demo/css/style.css" rel="stylesheet">
+<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<link href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" rel="stylesheet">
+<link href="http://yzhou.org/demo/css/style.css" rel="stylesheet">
 
 <!-- jsHeader -->
 
-<!-- jsChart -->	
-	<script>
-		<!--JSONHERE-->
-	</script>
+<!-- jsChart -->
+<script>
+<!--JSONHERE-->
+</script>
 
-	<script type="text/javascript" src="http://yzhou.org/demo/js/corrplot.min.js"></script>
+<script type="text/javascript" src="http://yzhou.org/demo/js/corrplot.min.js"></script>
 
-	<!-- divChart -->
-
-	
-
-<div id = "content-wrapper" style="width:800">
+<!-- divChart -->
 
 
-	<div class='corrplot' id='corrplot-1'>
+<div class='corrplot' id='corrplot-1'>
 
-	  
-	<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
-	<defs>
-		<linearGradient id="grad2" x1="0%" y1="0%" x2="0%" y2="100%">
-		  <stop offset="0%" style="stop-color:#053061;stop-opacity:1" />
-		  <stop offset="50%" style="stop-color:#FFFFFF;stop-opacity:1" />
-		  <stop offset="100%" style="stop-color:#67001F;stop-opacity:1" />
-		</linearGradient>
-	</defs>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1"><defs><linearGradient id="grad2" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:#053061;stop-opacity:1" /><stop offset="50%" style="stop-color:#FFFFFF;stop-opacity:1" /><stop offset="100%" style="stop-color:#67001F;stop-opacity:1" /></linearGradient></defs>
+</svg>
 
-	</svg>
-	</div>
-	
-<div id="bottonBox" style="width:800px;height:100px">
-	<div class="subButton" style="width:80px">
-		 <p class="buttonLabel"> Order:</p>
-		<select id="orderSelect" style="width:80px">
-			<option value="original">original</option>
-			<option value="AOE">AOE</option>
-			<option value="FPC">FPC</option>
-			<option value="hclust">hclust</option>
-			<option value="name">name</option>
-		</select>
-	
-	</div>
-	
-	<div class="subButton" style="width:190px; margin-left:100px">
-	<p class="buttonLabel"> DiagShow:</p>
-		<div id="diagDiv">
-			<input type="radio" id="diagUpper" name="diag" /><label for="diagUpper">Upper</label>
-			<input type="radio" id="diagLower" name="diag"  /><label for="diagLower">Lower</label>
-			<input type="radio" id="diagFull" name="diag" checked="checked"/><label for="diagFull">Full</label>
-		</div>
-	</div>
-	<div class="subButton" style="  width:240px; margin-left:300px">
-	<p class="buttonLabel"> Legend:</p>
-			<div id="legendDiv" style="position: relative">
-				<input type="radio" id="circle" name="legend" checked="checked"/><label for="circle">Circle</label>
-				<input type="radio" id="square" name="legend" /><label for="square">Square</label>
-				<input type="radio" id="ellipse" name="legend"/><label for="ellipse">Ellipse</label>
-			</div>
-	</div>
-
-<div class="subButton" style="  width:200px; margin-left:550px;">
-	 <p class="buttonLabel"> Number show: </p>
-	 <input type="checkbox" id="numShow" name="numShow" /><label id="numShowLabel" for="numShow">Show</label>
-	
 </div>
 
-	
+<div id="bottonBox" style="width:800px;height:100px">
+<div class="subButton" style="width:80px"><p class="buttonLabel"> Order:</p>
+<select id="orderSelect" style="width:80px">
+<option value="original">original</option>
+<option value="AOE">AOE</option>
+<option value="FPC">FPC</option>
+<option value="hclust">hclust</option>
+<option value="name">name</option>
+</select>
+
+</div>
+
+<div class="subButton" style="width:190px; margin-left:100px">
+<p class="buttonLabel"> DiagShow:</p>
+<div id="diagDiv">
+<input type="radio" id="diagUpper" name="diag" /><label for="diagUpper">Upper</label>
+<input type="radio" id="diagLower" name="diag"  /><label for="diagLower">Lower</label>
+<input type="radio" id="diagFull" name="diag" checked="checked"/><label for="diagFull">Full</label>
+</div>
+</div>
+<div class="subButton" style="  width:240px; margin-left:300px">
+<p class="buttonLabel"> Legend:</p>
+<div id="legendDiv" style="position: relative">
+<input type="radio" id="circle" name="legend" checked="checked"/><label for="circle">Circle</label>
+<input type="radio" id="square" name="legend" /><label for="square">Square</label>
+<input type="radio" id="ellipse" name="legend"/><label for="ellipse">Ellipse</label>
+</div>
+</div>
+
+<div class="subButton" style="  width:200px; margin-left:550px;">
+<p class="buttonLabel"> Number show: </p>
+<input type="checkbox" id="numShow" name="numShow" /><label id="numShowLabel" for="numShow">Show</label>
+
+</div>
+
+
 
 </div>
 
