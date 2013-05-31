@@ -33,7 +33,7 @@ m4 <- mvisCorrplotChart(cor(mtcars))
 plot(m4)
 pause()
 
-
-
-
-
+# province Display
+library(html5Vis)
+m5 <- mvisProvince.base(provinceData)
+plot(m5)

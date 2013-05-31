@@ -141,9 +141,24 @@
 
 .convertJsonList.ProvinceDis.base <- function(coreDf, provincevar, datavar ){
 	coreDf <- data.frame(coreDf[, c(provincevar, datavar)])
+	provinceNameArray <- c("辽宁", "河北", "北京", "上海", "江苏", "吉林", "黑龙江", "内蒙古", "青海", "山东", 
+		"天津", "宁夏", "陕西", "台湾", "海南", "河南", "新疆", "甘肃", "香港", "西藏", "四川", "云南", "贵州", 
+		"澳门", "广西", "广东", "重庆", "湖北", "湖南", "江西", "安徽", "福建", "浙江", "山西")
+	provinceNameArray.EN <- c("liaoning", "hebei", "beijing", "shanghai", "jiangsu", "jilin", "heilongjiang", "neimenggu", "qinghai", "shandong",
+"tianjin", "ningxia", "shaanxi", "taiwan", "hainan", "henan", "xinjiang", "gansu", "xianggang", "xizang", "sichuan", "yunnan", "guizhou",
+"aomen","guangxi", "guangdong", "chongqing", "hubei", "hunan", "jiangxi", "anhui", "fujian", "zhejiang", "shanxi")
 	names(coreDf) <- c("province", "value")
+
+	if (any(coreDf$province %in% provinceNameArray)){
+		outDf <- coreDf[coreDf$province %in% provinceNameArray, ]
+		outDf$province <- provinceNameArray.EN[ match( coreDf$province, provinceNameArray)]
+	}else if(any(coreDf$province %in% provinceNameArray.EN)){
+		outDf <- coreDf[coreDf$province %in% provinceNameArray.EN, ]
+	}else{
+		stop("Can't find enough rows of data.")
+	}
 	outList = list()
-	outList[["data"]] <- lapply(1:nrow(coreDf), FUN = function(X) coreDf[X, , drop = TRUE])
+	outList[["data"]] <- lapply(1:nrow(outDf), FUN = function(X) outDf[X, , drop = TRUE])
 	return(outList)
 
 }

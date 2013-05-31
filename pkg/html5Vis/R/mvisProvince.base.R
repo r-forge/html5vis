@@ -1,7 +1,7 @@
-#' motion Chart for display time-series data.
+#' Province base plot
 #'
-#' This mvisMotionChart function can generate user-interactive plots which displays the googleVis style motionChart
-#' in HTML5 style. It is a backup strategy for displaying the time-series data.
+#' This mvisProvince.base function can generate user-interactive plots which displays Chinese province data
+#' in HTML5 style. 
 #' 
 #' @param data: a data.frame. The data has to have at least four columns with subject name (idvar), time (timevar) and two columns of numeric values. Further columns, numeric and character/factor are optional. The combination of idvar and timevar has to describe a unique row. 
 #' The column names of the idvar and timevar have to be specified. Further columns, if not specified by the other arguments (xvar, yvar, colorvar, sizevar), will be assumed to be in the order of the arguments.
@@ -20,6 +20,7 @@
 
 #' ## Define which columns are used for the initial setup of the various
 #' ## dimensions
+#' library(html5Vis)
 #' M7 <- mvisMotionChart(Fruits, idvar="Fruit", timevar="Year",
 #'                     xvar="Profit", yvar="Expenses",
 #'                     colorvar="Location", sizevar="Sales")
@@ -47,7 +48,7 @@ mvisProvince.base <- function(data, provincevar = "province", datavar = "value",
 	footerStr <- footerHtml
 	captionStr <- gsub("CHARTID", chartid, captionHtml)
 	chartStr <- gsub("HTML5FOLDERHERE", "html5", chartHtml)
-	chartStr <- gsub("<!--JSONHERE-->", paste("var outputData =", jsonStr), chartStr)
+	chartStr <- gsub("<!--JSONHERE-->", paste("var geoBaseData =", jsonStr), chartStr)
 	
 	headerStr <- paste(headerStr, collapse = "\n")
 	footerStr <- paste(footerStr, collapse = "\n")
